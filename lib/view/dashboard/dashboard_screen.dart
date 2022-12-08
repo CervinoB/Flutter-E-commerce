@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import 'package:get/get.dart';
 import 'package:my_grocery/controller/dashboard_controller.dart';
+import 'package:my_grocery/view/home/home_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -14,7 +15,7 @@ class DashboardScreen extends StatelessWidget {
           child: IndexedStack(
             index: controller.tabIndex,
             children: [
-              Container(),
+              const HomeScreen(),
               Container(
                 color: Colors.red,
               ),
@@ -46,9 +47,7 @@ class DashboardScreen extends StatelessWidget {
             unselectedItemColor: Theme.of(context).colorScheme.secondary,
             showUnselectedLabels: true,
             currentIndex: controller.tabIndex,
-            onTap: (val) {
-              controller.updateIndex(val);
-            },
+            onTap: (val) => controller.updateIndex(val),
             items: const [
               BottomNavigationBarItem(
                 icon: Icon(Icons.home),
