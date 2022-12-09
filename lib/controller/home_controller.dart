@@ -41,7 +41,7 @@ class HomeController extends GetxController {
         popularCategoryList.assignAll(popularCategoryListFromJson(result.body));
       }
     } finally {
-      print(popularCategoryList.length);
+      // print(popularCategoryList.length);
       isPopularCategoryLoading(false);
     }
   }
