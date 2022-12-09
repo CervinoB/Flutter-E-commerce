@@ -4,8 +4,8 @@ List<AdBanner> adBannerListFromJson(String val) => List<AdBanner>.from(
     json.decode(val)['data'].map((banner) => AdBanner.fromJson(banner)));
 
 class AdBanner {
-  late final int id;
-  late final String image;
+  final int id;
+  final String image;
 
   AdBanner({required this.id, required this.image});
 
