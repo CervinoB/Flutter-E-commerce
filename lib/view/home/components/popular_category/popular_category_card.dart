@@ -1,4 +1,4 @@
-import 'dart:ui';
+import 'package:bordered_text/bordered_text.dart';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -33,13 +33,22 @@ class PopularCategoryCard extends StatelessWidget {
             ),
             child: Padding(
               padding: const EdgeInsets.all(10),
-              child: Text(
-                category.name,
-                style: const TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  BorderedText(
+                    strokeWidth: 2,
+                    child: Text(
+                      category.name,
+                      style: const TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
